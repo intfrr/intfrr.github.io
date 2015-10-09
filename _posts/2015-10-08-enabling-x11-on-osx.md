@@ -9,9 +9,9 @@ tags: [[tutorial]]
 {% include JB/setup %}
 This article describes how to enable X11 in OSX to launch XQuartz automatically
 
-## Overview
+# Overview
 
-### What is XQuartz?
+## What is XQuartz?
 
 XQuartz (formerly and often still informally referred to as X11.app) is Apple Inc.'s version of the X server, a component of the X Window System, for Mac OS X. The X Window System is a standard framework for creating applications with a graphical user interface on Unix-like operating systems. XQuartz is therefore required to allow cross-platform applications not specifically designed for OS X to run on it, including much scientific and academic software. The name derives from Quartz, the OS X graphics framework, to which XQuartz connects these applications.
 
@@ -24,16 +24,16 @@ And automatically the app loads up.
 
 # How to make this happen
 
-According to  http://apple.stackexchange.com/questions/91250/start-xquartz-automatically-on-x11-app-launch
+According to
+`http://apple.stackexchange.com/questions/91250/start-xquartz-automatically-on-x11-app-launch`
 
-And then to http://xquartz.macosforge.org/trac/wiki/X11-UsersFAQ#sshXforwardingdebugging
+And then to
+`http://xquartz.macosforge.org/trac/wiki/X11-UsersFAQ#sshXforwardingdebugging`
 
 This was the solution
 
 
 ## Setup
-
-
 
 ### ssh X forwarding debugging
 
