@@ -21,41 +21,44 @@ shc itself is not a compiler such as cc, it rather encodes and encrypts a shell 
 
 ### Examples
 
-shc -f test.bash -o test
+	shc -f test.bash -o test
 
 # How to make this happen
 
 According to
-`http://www.thegeekstuff.com/2012/05/encrypt-bash-shell-script/`
+<a href="http://www.thegeekstuff.com/2012/05/encrypt-bash-shell-script/">http://www.thegeekstuff.com/2012/05/encrypt-bash-shell-script/</a>
 
 And then to
-`http://www.thegeekstuff.com/2012/05/encrypt-bash-shell-script/`
+<a href="http://neurobin.github.io/shc/">http://neurobin.github.io/shc/</a>
 
 
 ## Setup
 
 ### Install
-```
-./configure
-make
-sudo make install
-```
+	./configure
+	make
+	sudo make install
+
 
 or simply run the binary file provided, in bin/x32 or bin/x64 in terminal
-```
-./shc options
-```
+
+	./shc options
+
 
 ### For Ubuntu
-```
-sudo add-apt-repository -y ppa:neurobin/ppa
-sudo apt-get update
-sudo apt-get install shc
-```
+
+
+
+	sudo add-apt-repository -y ppa:neurobin/ppa
+	sudo apt-get update
+	sudo apt-get install shc
+
 
 ### Testing
+
 `cd to test "directory"...`
-output binary file will be test. If no output file is specified by the -o option, then it will create an executable with .x extension by default
+
+Output binary file will be test. If no output file is specified by the -o option, then it will create an executable with .x extension by default
 
 ### Known bugs
 The one (and I hope the only) limitation using shc is the _SC_ARG_MAX system configuration parameter. It limits the maximum length of the arguments to the exec function, limiting the maximum length of the runnable script of shc. !! - CHECK YOUR RESULTS CAREFULLY BEFORE USING - !!
