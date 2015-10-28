@@ -32,6 +32,13 @@ production_url : "https://intfrr.github.io"
 url : "https://intfrr.github.io/"
 enforce_ssl: intfrr.github.io
 
+
+# Dictionary to get menu
+pages_list:
+  About: '/about'
+  Archive: '/archive'
+  Feed: '/atom.xml'
+
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :

@@ -1,4 +1,6 @@
+<!--
 <head>
+-->
   <meta charset="UTF-8">
   <link href="http://gmpg.org/xfn/11" rel="profile">
 
@@ -14,14 +16,14 @@
   </title>
 
   <!-- Canonical -->
-  <link rel="canonical" href=" { { site.url } }{ { page.url } }" />
+  <link rel="canonical" href=" {{ site.url }}{{ page.url }}" />
 
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="{{ site.url }}public/css/styles.css">
 
   <!-- Force ssl -->
   <script type="text/javascript">
-      var host = "{ { site.url } }";
+      var host = "{{ site.url }}";
       if ((host == window.location.host) && (window.location.protocol != "https:"))
           window.location.protocol = "https";
   </script>
@@ -32,4 +34,6 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.url }}atom.xml">
+<!--
 </head>
+-->
