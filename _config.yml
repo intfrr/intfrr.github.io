@@ -30,9 +30,9 @@ author :
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
 production_url : "https://intfrr.github.io"
-#url : "https://intfrr.github.io/"
-#enforce_ssl: intfrr.github.io
-url : "http://127.0.0.1:4000/"
+url : "https://intfrr.github.io/"
+enforce_ssl: intfrr.github.io
+#url : "http://127.0.0.1:4000/"
 #enforce_ssl: 127.0.0.1:4000
 
 
