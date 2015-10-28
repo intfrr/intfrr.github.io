@@ -30,6 +30,7 @@ author :
 #
 production_url : "https://intfrr.github.io"
 url : "https://intfrr.github.io"
+enforce_ssl: intfrr.github.io
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
