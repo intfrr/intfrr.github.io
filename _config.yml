@@ -16,6 +16,7 @@ tagline: About me
 author :
   name : Kris Rott
   email : kaldt.slange@gmail.com
+  bio: Back to life
   github : intfrr
   twitter : intfrr
   feedburner : feedname
@@ -29,8 +30,11 @@ author :
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
 production_url : "https://intfrr.github.io"
-url : "https://intfrr.github.io/"
-enforce_ssl: intfrr.github.io
+#url : "https://intfrr.github.io/"
+#enforce_ssl: intfrr.github.io
+url : "http://127.0.0.1:4000/"
+#enforce_ssl: 127.0.0.1:4000
+
 
 
 # Dictionary to get menu
@@ -96,7 +100,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : jekyllbootstrap
+      short_name : krissrottblog
     livefyre :
       site_id : 123
     intensedebate :
