@@ -1,6 +1,7 @@
 <h1 class="entry-title">
 {% if page.title %}
-    <a href="{{ root_url }}{{ page.url }}">{{ page.title }}</a>
+    <a class="title-name" href="{{ root_url }}{{ page.url }}">{{ page.title }}</a>
+    <br>
 {% endif %}
 {% if post.title %}
     <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>

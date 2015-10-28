@@ -43,6 +43,10 @@
 	color: #439fc5;
 }
 
+.title-name {
+	font-size: 60px !important;
+}
+
 .menu-level-0 {
 	position: fixed;
 	z-index:100;
@@ -77,4 +81,13 @@
 .sidebar .img-circle {
 	margin: 0 auto;
 	width:90% !important;
+}
+
+article {
+	padding: 0 !important;
+}
+
+article .col-sm-10 {
+	width:100%;
+	padding:0;
 }
