@@ -22,5 +22,11 @@
 	display: inline-block;
 }
 
+.masthead-title {
+	position:fixed;
+	left: 100px;
+	z-index:100;
+}
+
 .menu-sublevel {
 }
