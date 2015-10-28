@@ -11,71 +11,93 @@ This article describes how to chroot users in sftp
 
 # Overview
 
-## What is Shc?
+## What is Sftp?
 
-A generic shell script compiler. Shc takes a script, which is specified on the command line and produces C source code. The generated source code is then compiled and linked to produce a stripped binary executable.
-
-The compiled binary will still be dependent on the shell specified in the first line of the shell code (i.e shebang) (i.e. #!/bin/sh), thus shc does not create com‐ pletely independent binaries.
-
-shc itself is not a compiler such as cc, it rather encodes and encrypts a shell script and generates C source code with the added expiration capability. It then uses the system compiler to compile a stripped binary which behaves exactly like the original script. Upon execution, the compiled binary will decrypt and execute the code with the shell -c option.
+Secure ftp over ssh
 
 ### Examples
 
-	shc -f test.bash -o test
+	sftp sftpuser@server.com
 
 # How to make this happen
 
 According to
-<a href="http://www.thegeekstuff.com/2012/05/encrypt-bash-shell-script/">http://www.thegeekstuff.com/2012/05/encrypt-bash-shell-script/</a>
+<a href="https://wiki.archlinux.org/index.php/SFTP_chroot">https://wiki.archlinux.org/index.php/SFTP_chroot</a>
 
 And then to
-<a href="http://neurobin.github.io/shc/">http://neurobin.github.io/shc/</a>
+<a href="http://www.xpressfx.co.za/index.php/tutorials/linux/item/33-centos-7-setup-sftp-with-chroot-jail">http://www.xpressfx.co.za/index.php/tutorials/linux/item/33-centos-7-setup-sftp-with-chroot-jail</a>
 
 
 ## Setup
 
 ### Install
-	./configure
-	make
-	sudo make install
-
-
-or simply run the binary file provided, in bin/x32 or bin/x64 in terminal
-
-	./shc options
-
-
-### For Ubuntu
-
-
-
-	sudo add-apt-repository -y ppa:neurobin/ppa
-	sudo apt-get update
-	sudo apt-get install shc
+	groupadd sftpgroup
+	useradd sftpuser -g sftpgroup -d /home/sftpgroup/sftpuser -s /bin/false
+	passwd sftpuser
+	mkdir /home/sftpgroup/sftpuser/www
+	chown root /home/sftpgroup/sftpuser
+	chmod 755 /home/sftpgroup/sftpuser
+	chown sftpuser /home/sftpgroup/sftpuser/www
+	chmod 755 /home/sftpgroup/sftpuser/www
+	setsebool -P ssh_chroot_rw_homedirs on
 
 
 ### Testing
 
-`cd to test "directory"...`
+	sftp sftpuser@server.com
+	sftpuser@server.com's password:
+	Connected to server.com.
+	sftp> cd www
+	sftp> mkdir a
+	sftp> ls
+	a
 
-Output binary file will be test. If no output file is specified by the -o option, then it will create an executable with .x extension by default
-
-### Known bugs
-The one (and I hope the only) limitation using shc is the _SC_ARG_MAX system configuration parameter. It limits the maximum length of the arguments to the exec function, limiting the maximum length of the runnable script of shc. !! - CHECK YOUR RESULTS CAREFULLY BEFORE USING - !!
-
-### Contribute:
-If you are a developer, you can consider contributing to this project by forking this repository and making changes for better and do a pull request, or sharing ideas and suggestions or finding bugs, anything at all, what you think will be beneficial for this project.
-
-If you aren't a developer, but still want to contribute, then you can support the contributing developers spiritually, by starring the repository and sharing ideas. If you want to be notified of the continuous development, you can add this in your watch list in Github.
-
-If you see any problems or bugs please open an issue here
+### Conclusion
+	[root@xxxx home]# pwd
+	/home
+	[root@xxxx home]# ls -la
+	total 4
+	drwxr-xr-x.  5 root root   xx xxx xx xxxxxx .
+	dr-xr-xr-x. 17 root root xxxx xxx xx xxxxxx ..
+	drwxr-xr-x.  5 root root   xx xxx xx xxxxxx xxxxx
+	drwxr-xr-x.  3 root root   xx xxx xx xxxxxx sftgroup
+	drwxr-xr-x.  2 root root    x xxx xx xxxxxx xxxxxxxx
+	[root@xxxx home]# cd sftgroup/
+	[root@xxxx sftgroup]# pwd
+	/home/sftgroup
+	[root@xxxx sftgroup]# ls -la
+	total 0
+	drwxr-xr-x. 3 root root     xx xxx xx xxxxxx .
+	drwxr-xr-x. 5 root root     xx xxx xx xxxxxx ..
+	drwxr-xr-x. 4 root sftgroup xx xxx xx xxxxxx sftpuser
+	[root@xxxx sftpgroup]# cd sftpuser/
+	[root@xxxx sftpuser]# pwd
+	/home/sftpgroup/sftpuser
+	[root@xxxx sftpuser]# ls -al
+	total 12
+	drwxr-xr-x. 4 root     sftgroup  xx xxx xx xxxxxx .
+	drwxr-xr-x. 3 root     root      xx xxx xx xxxxxx ..
+	-rw-r--r--. 1 sftpuser sftgroup  xx xxx x  xxxxxx .bash_logout
+	-rw-r--r--. 1 sftpuser sftgroup xxx xxx x  xxxxxx .bash_profile
+	-rw-r--r--. 1 sftpuser sftgroup xxx xxx x  xxxxxx .bashrc
+	drwxr-xr-x. 4 sftpuser sftgroup  xx xxx xx xxxxxx .mozilla
+	drwxr-xr-x. 3 sftpuser root      xx xxx xx xxxxxx www
+	[root@xxxx sftpuser]# cd www
+	[root@xxxx www]# pwd
+	/home/sftgroup/sftpuser/www
+	[root@xxxx www]# ls -la
+	total 0
+	drwxr-xr-x. 3 sftpuser root     xx xxx xx xxxxxx .
+	drwxr-xr-x. 4 root     sftgroup xx xxx xx xxxxxx ..
+	drwxr-xr-x. 2 sftpuser sftgroup  x xxx xx xxxxxx a
+	[root@xxxx www]#
 
 ### Authors:
-Francisco Rosales Garcia
-<a href="frosal@fi.upm.es">frosal@fi.upm.es</a>
+Unknown
+<a href="http://www.xpressfx.co.za">http://www.xpressfx.co.za</a>
 
-Jahidul Hamid
-<a href="http://github.com/neurobin">http://github.com/neurobin</a>
+Nadir Palacios
+<a href="http://github.com/intfrr">http://github.com/intfrr</a>
 
 
 
