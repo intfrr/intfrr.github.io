@@ -2,8 +2,9 @@
 layout: page
 title: About
 tagline: Intfrr
+description: "About me"
 menu:
-  name: something
+  name: About
   parent: main
   position: 42
 ---
