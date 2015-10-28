@@ -13,9 +13,18 @@
     {% endif %}
   </title>
 
+  <!-- Canonical -->
+  <link rel="canonical" href=" { { site.url } }{ { page.url } }" />
+
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="{{ site.url }}public/css/styles.css">
 
+  <!-- Force ssl -->
+  <script type="text/javascript">
+      var host = "{ { site.url } }";
+      if ((host == window.location.host) && (window.location.protocol != "https:"))
+          window.location.protocol = "https";
+  </script>
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.url }}public/apple-touch-icon-precomposed.png">
