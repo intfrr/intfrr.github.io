@@ -2,6 +2,7 @@
 theme :
   name : dbyll
 ---
+{% include head.html %}
 <h3 class="masthead-title">
 		<a href="/" title="Home">{{ site.title }}</a>
 
@@ -10,10 +11,10 @@ theme :
 		  <small><a href="{{ page[1]  }}">{{ page[0] }}</a></small>
 		{% endfor %}
 	</h3>
-
-{% include head.html %}
 {% include JB/setup %}
+
 <!--
 {% include menu.html menu=site.menu %}
 -->
+
 {% include themes/dbyll/default.html %}
