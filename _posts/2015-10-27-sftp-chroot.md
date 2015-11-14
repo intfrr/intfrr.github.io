@@ -40,6 +40,11 @@ And then to
 	chown sftpuser /home/sftpgroup/sftpuser/www
 	chmod 755 /home/sftpgroup/sftpuser/www
 	setsebool -P ssh_chroot_rw_homedirs on
+	mkdir /home/sftpgroup/sftpuser/www/website
+	chown -R sftpuser:apache /home/sftpgroup/sftpuser/www/website
+	chmod g+s /home/sftpgroup/sftpuser/www/website
+	chmod a-w /home/sftpgroup/sftpuser/*
+	chmod a-w /home/sftpgroup/sftpuser/.*
 
 
 ### Testing
@@ -48,9 +53,13 @@ And then to
 	sftpuser@server.com's password:
 	Connected to server.com.
 	sftp> cd www
-	sftp> mkdir a
+	sftp> mkdir website
 	sftp> ls
-	a
+	website
+	sftp> cd website
+	sftp> mkdir test
+	sftp> ls
+	test
 
 ### Conclusion
 	[root@xxxx home]# pwd
@@ -75,22 +84,30 @@ And then to
 	/home/sftpgroup/sftpuser
 	[root@xxxx sftpuser]# ls -al
 	total 12
-	drwxr-xr-x. 4 root     sftgroup  xx xxx xx xxxxxx .
-	drwxr-xr-x. 3 root     root      xx xxx xx xxxxxx ..
-	-rw-r--r--. 1 sftpuser sftgroup  xx xxx x  xxxxxx .bash_logout
-	-rw-r--r--. 1 sftpuser sftgroup xxx xxx x  xxxxxx .bash_profile
-	-rw-r--r--. 1 sftpuser sftgroup xxx xxx x  xxxxxx .bashrc
-	drwxr-xr-x. 4 sftpuser sftgroup  xx xxx xx xxxxxx .mozilla
-	drwxr-xr-x. 3 sftpuser root      xx xxx xx xxxxxx www
+	dr-xr-xr-x. 4 root     sftgroup  xx xxx xx xxxxxx .
+	dr-xr-xr-x. 3 root     root      xx xxx xx xxxxxx ..
+	-r--r--r--. 1 sftpuser sftgroup  xx xxx x  xxxxxx .bash_logout
+	-r--r--r--. 1 sftpuser sftgroup xxx xxx x  xxxxxx .bash_profile
+	-r--r--r--. 1 sftpuser sftgroup xxx xxx x  xxxxxx .bashrc
+	dr-xr-xr-x. 4 sftpuser sftgroup  xx xxx xx xxxxxx .mozilla
+	dr-xr-xr-x. 3 sftpuser root      xx xxx xx xxxxxx www
 	[root@xxxx sftpuser]# cd www
 	[root@xxxx www]# pwd
 	/home/sftgroup/sftpuser/www
 	[root@xxxx www]# ls -la
 	total 0
-	drwxr-xr-x. 3 sftpuser root     xx xxx xx xxxxxx .
-	drwxr-xr-x. 4 root     sftgroup xx xxx xx xxxxxx ..
-	drwxr-xr-x. 2 sftpuser sftgroup  x xxx xx xxxxxx a
-	[root@xxxx www]#
+	dr-xr-xr-x. 3 sftpuser root     xx xxx xx xxxxxx .
+	dr-xr-xr-x. 4 root     sftgroup xx xxx xx xxxxxx ..
+	drwxr-xr-x. 2 sftpuser sftgroup  x xxx xx xxxxxx website
+	[root@xxxx www]# cd website/
+	[root@xxxx website]# pwd
+	/home/sftgroup/sftpuser/www/website
+	[root@xxxx website]# ls -la
+	total 0
+	drwxr-sr-x. 3 sftpuser apache xx xxx xx xxxxxx .
+	dr-xr-xr-x. 3 sftpuser root   xx xxx xx xxxxxx ..
+	drwxr-sr-x. 2 sftpuser apache  x xxx xx xxxxxx test
+	[root@xxxx website]#
 
 ### Authors:
 Unknown
