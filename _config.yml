@@ -79,7 +79,7 @@ JB :
   #BASE_PATH : "/"
   #baseurl: "/"
 ######SET THIS ON PROD ENVIRONMENT ---  DO NOT FORGET
-  BASE_PATH : "http://intfrr.github.com"
+  BASE_PATH : "http://intfrr.github.io"
 
 ######SET THIS ON LOCAL ENVIRONMENT ---  DO NOT FORGET
 #  BASE_PATH : "http://127.0.0.1:4000"
