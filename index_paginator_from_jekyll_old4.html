@@ -8,12 +8,15 @@ tagline:
 <div class="blog-index">
 	{% assign post = site.posts.first %}
 	{% assign content = post.content %}
+	<!--{% include post_detail.html %}-->
 </div>
 
 
+<!-- This loops through the paginated posts -->
 <!--
-	This loops through the paginated posts
-	And renders the post
+{% capture i %}
+	{{ paginator.page | minus: 2 }}
+{% endcapture %}
 -->
 {% assign i = 0 %}
 {% for post in paginator.posts %}
@@ -30,30 +33,15 @@ tagline:
 	{% assign i = i | plus: 1 %}
 {% endfor %}
 
-<hr/>
 
 <!--
-	This loops through the paginated posts
-	And get the actual post's index
+{% capture i %}
+	{{ paginator.page | minus: 2 }}
+{% endcapture %}
 -->
-{% assign next_post_index = 1 %}
-{% for page in (1..paginator.total_pages) %}
-	{% if page == paginator.page %}
-		{% break %}
-	{% endif %}
-	{% assign next_post_index = next_post_index | plus: 1 %}
-{% endfor %}
-
-<!--
-	This loops through the paginated posts
-	And renders the next post
--->
-{% assign next_post_index = next_post_index | plus: 1 %}
-<!--<h1>{{next_post_index}}</h1>-->
-
-{% assign i = 1 %}
-{% for post in site.posts %}
-	{% if i == next_post_index%}
+{% assign i = 0 %}
+{% for post in paginator.posts %}
+	{% if i == 1%}
 		{% if post.hidden != true %}
 
 			<article class="home" style="margin-top:40px">
@@ -102,10 +90,6 @@ tagline:
 
 <hr/>
 
-<!--
-	This loops through the paginated posts
-	And renders the pager
--->
 <ul class="pager">
 
 	{% if paginator.previous_page %}
@@ -136,3 +120,21 @@ tagline:
 	</li>
 	{% endif %}
 </ul>
+
+
+<!-- Pagination links -->
+<!--
+<div class="pagination">
+	{% if paginator.previous_page %}
+		<a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+	{% else %}
+		<span class="previous">Previous</span>
+	{% endif %}
+	<span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+	{% if paginator.next_page %}
+		<a href="{{ paginator.next_page_path }}" class="next">Next</a>
+	{% else %}
+		<span class="next ">Next</span>
+	{% endif %}
+</div>
+-->

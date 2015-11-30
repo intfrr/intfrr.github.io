@@ -2,8 +2,8 @@
 layout: post
 title: "Ionic setup on OSX 10.11 with android and ios emulators and zsh"
 description: "Learning to setup on OSX 10.11 with android and ios emulators and zsh"
-category: lessons
-tagline: "Developer lessons"
+category: development
+tagline: "Development lessons"
 tags: [[tutorial]]
 ---
 {% include JB/setup %}
