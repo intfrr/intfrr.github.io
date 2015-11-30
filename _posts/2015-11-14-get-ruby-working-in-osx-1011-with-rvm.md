@@ -2,8 +2,8 @@
 layout: post
 title: "Get ruby working in OSX 10.11 with rvm"
 description: "Learning to get ruby working in OSX 10.11 with rvm for jekyll and zsh"
-category: lessons
-tagline: "Developer lessons"
+category: development
+tagline: "Development lessons"
 tags: [[tutorial]]
 ---
 {% include JB/setup %}
@@ -132,7 +132,7 @@ Do:
 
 Check jekyll:
 
-	cd /path-ro-jekyll/
+	cd /path-to-jekyll/
 	jekyll serve
 
 You must get:
@@ -152,6 +152,8 @@ You must get:
 
 ### Conclusion
 Rvm is good if it s configured good
+
+```DON'T FORGET TO USE TABS INSTEAD ON SPACES ON RB FILES``
 
 ### Authors:
 Nadir Palacios

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Enabling X11 on OSX"
-description: ""
-category: lessons
+description: "Learning to enabling X11 on OSX"
+category: sysadmin
 tagline: "Sysadmin lessons"
 tags: [[tutorial]]
 ---

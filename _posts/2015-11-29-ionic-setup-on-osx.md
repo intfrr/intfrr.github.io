@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Ionic setup on OSX 10.11 with android and ios emulators and zsh"
+description: "Learning to setup on OSX 10.11 with android and ios emulators and zsh"
 category: lessons
 tagline: "Developer lessons"
 tags: [[tutorial]]
@@ -202,6 +203,20 @@ And then to
 		npm install -g cordova
 		npm install -g ionic
 		npm install -g gulp
+
+	If you get:
+
+				/usr/local/lib
+		└── (empty)
+
+		npm ERR! code 1
+
+	Then you must:
+
+		$ sudo chown -R $(whoami):wheel /usr/local/bin
+		$ sudo chown -R $(whoami):wheel /usr/local/share
+
+	You should do the last step every time you get an error on installing with npm
 
 
 ### Testing

@@ -2,8 +2,8 @@
 layout: post
 title: "Configure AMPPS to work with Drupal 8"
 description: "Learn to configure AMPPS to work with Drupal 8"
-category: lessons
-tagline: "Sysadmin lessons"
+category: development
+tagline: "Development lessons"
 tags: [[tutorial]]
 ---
 {% include JB/setup %}

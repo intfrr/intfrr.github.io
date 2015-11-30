@@ -2,7 +2,7 @@
 layout: post
 title: "SFTP Chroot"
 description: "Learning to chroot users in sftp"
-category: lessons
+category: sysadmin
 tagline: "Sysadmin lessons"
 tags: [[tutorial]]
 ---

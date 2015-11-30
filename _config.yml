@@ -21,6 +21,7 @@ author :
   twitter : intfrr
   feedburner : feedname
 paginate: 1
+paginate_path: "posts/page:num/"
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt
@@ -80,10 +81,10 @@ JB :
   #BASE_PATH : "/"
   #baseurl: "/"
 ######SET THIS ON PROD ENVIRONMENT ---  DO NOT FORGET
-  BASE_PATH : "https://intfrr.github.io"
+  # BASE_PATH : "https://intfrr.github.io"
 
 ######SET THIS ON LOCAL ENVIRONMENT ---  DO NOT FORGET
-#  BASE_PATH : "http://127.0.0.1:4000"
+  BASE_PATH : "http://127.0.0.1:4000"
 
 
 

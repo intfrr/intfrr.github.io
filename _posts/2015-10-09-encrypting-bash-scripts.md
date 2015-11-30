@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Encrypting bash scripts"
-description: ""
-category: lessons
+description: "Learning to encrypting bash scripts"
+category: sysadmin
 tagline: "Sysadmin lessons"
 tags: [[tutorial]]
 ---
