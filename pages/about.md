@@ -1,7 +1,6 @@
 ---
 layout: page
-title: About
-tagline: Intfrr
+title: "About"
 description: "About me"
 menu:
   name: About
