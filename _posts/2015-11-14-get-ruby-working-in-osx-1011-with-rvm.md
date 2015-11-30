@@ -3,7 +3,7 @@ layout: post
 title: "Get ruby working in OSX 10.11 with rvm"
 description: "Learning to get ruby working in OSX 10.11 with rvm for jekyll and zsh"
 category: lessons
-tagline: "Dveloper lessons"
+tagline: "Developer lessons"
 tags: [[tutorial]]
 ---
 {% include JB/setup %}
@@ -156,6 +156,3 @@ Rvm is good if it s configured good
 ### Authors:
 Nadir Palacios
 <a href="http://github.com/intfrr">http://github.com/intfrr</a>
-
-
-
