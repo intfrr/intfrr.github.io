@@ -47,6 +47,7 @@ pages_list:
 
 
 
+#-------------
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
@@ -84,6 +85,9 @@ JB :
 ######SET THIS ON LOCAL ENVIRONMENT ---  DO NOT FORGET
 #  BASE_PATH : "http://127.0.0.1:4000"
 
+
+
+#-------------
   # By default, the asset_path is automatically defined relative to BASE_PATH plus the enabled theme.
   # ex: [BASE_PATH]/assets/themes/[THEME-NAME]
   #
