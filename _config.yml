@@ -20,7 +20,7 @@ author :
   github : intfrr
   twitter : intfrr
   feedburner : feedname
-paginate: 5
+paginate: 1
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt
@@ -78,6 +78,11 @@ JB :
   #BASE_PATH : false
   #BASE_PATH : "/"
   #baseurl: "/"
+######SET THIS ON PROD ENVIRONMENT ---  DO NOT FORGET
+  BASE_PATH : "http://intfrr.github.com"
+
+######SET THIS ON LOCAL ENVIRONMENT ---  DO NOT FORGET
+#  BASE_PATH : "http://127.0.0.1:4000"
 
   # By default, the asset_path is automatically defined relative to BASE_PATH plus the enabled theme.
   # ex: [BASE_PATH]/assets/themes/[THEME-NAME]
