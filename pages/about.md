@@ -2,10 +2,11 @@
 layout: page
 title: "About"
 description: "About me"
+tagline: "Intfr"
 menu:
   name: About
   parent: main
-  position: 42
+  position: 10
 ---
 {% include JB/setup %}
 

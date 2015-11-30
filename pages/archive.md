@@ -2,10 +2,11 @@
 layout: page
 title: "Archive"
 description: "All posts list"
+tagline: "Intfr"
 menu:
   name: Archive
   parent: main
-  position: 42
+  position: 200
 ---
 {% include JB/setup %}
 <ul class="posts">

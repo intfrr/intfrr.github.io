@@ -10,9 +10,11 @@
 		{% else %}
 			{% capture menu_level_sublevel %}{{ menu_level_sublevel | plus:1 }}{% endcapture %}
 		{% endif %}
-		<!--
+
+
 		<li class="{% if page.url == menu_page.url %}current{% endif %} {% if menu_page.suburls contains page.url %}current-parent{% endif %}">
-		-->
+
+
 		<li class="menu-sublevel menu-level-{{ menu_level }}-{{ menu_level_sublevel }}">
 			<a href="{{ menu_page.url }}">{{ menu_page.menu.name }}</a>
 			{% unless menu_page.subpages contains 0 %}
