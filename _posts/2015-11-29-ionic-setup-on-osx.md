@@ -230,7 +230,7 @@ And then to
 
 1. Check android:
 
-		$ ionic add platform android
+		$ ionic platform add android
 		$ ionic build android
 		$ ionic emulate android
 
@@ -254,7 +254,7 @@ And then to
 
 2. Check iOS
 
-		$ ionic add platform ios
+		$ ionic platform add ios
 		$ ionic build ios
 		$ ionic emulate ios
 
