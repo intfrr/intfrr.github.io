@@ -201,6 +201,7 @@ And then to
    
 It is better when you have node installed with brew and npm installed on its own, or else, if in trouble with brew and npm, give owner permission to some folders as said it in
 <a href="http://stackoverflow.com/questions/18923191/npm-install-fails">http://stackoverflow.com/questions/18923191/npm-install-fails</a>
+		
 		sudo chown -R `whoami` ~/.npm
 		sudo chown -R `whoami` /usr/local/lib/node_modules
 
