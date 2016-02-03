@@ -198,6 +198,11 @@ And then to
 ####Install Ionic and dependencies
 
 1. Install nodejs and homebrew via: <a href="http://www.johnpapa.net/how-to-use-npm-global-without-sudo-on-osx/">http://www.johnpapa.net/how-to-use-npm-global-without-sudo-on-osx/</a>
+   It is better when you have node installed with brew and npm installed on its own, or else, if in trouble with brew and npm, give owner permission to some folders as said it in
+<a href="http://stackoverflow.com/questions/18923191/npm-install-fails">http://stackoverflow.com/questions/18923191/npm-install-fails</a>
+		sudo chown -R `whoami` ~/.npm
+		sudo chown -R `whoami` /usr/local/lib/node_modules
+
 2. Install ionic and its dependencies
 
 		npm install -g cordova
